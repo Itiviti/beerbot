@@ -1,0 +1,30 @@
+* A beer bot for Slack
+Based on original idea from Mihai Oltean. 
+Lets one offer and receive virtual beers on slack messageing system.
+Also features a "beerboard" with stats.
+
+* To run 
+- clone the repo
+- create a bot token using slack
+- add an init.edn in conf folder containing
+#+BEGIN_SRC clojure
+  {
+   :slack-bot-auth-token ""
+   :proxy-host ""
+   :proxy-port 
+   }
+#+END_SRC
+- start a repl
+- run following to create persistence file (to be done only first time)
+#+BEGIN_SRC clojure
+  (nwrite! {:beers ()})
+
+#+END_SRC
+- run 
+#+BEGIN_SRC clojure
+  (start)
+#+END_SRC
+
+* Disclaimer
+It's a very quick and dirty implementation which is likely to be never refactored or changed. It does mot respect any coding standards and 
+its persistence is not transactional. Use at your own risk ;)
