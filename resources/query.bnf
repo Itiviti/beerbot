@@ -1,0 +1,10 @@
+query = command
+    <command> = help | showboard | offer
+    help = <'help'>
+    showboard = <'board'>
+    offer = <'offer'> <'a'>? <'beer'>? <'to'>? users <'a'>? <'beer'>? <'for'>? reason
+    <reason> = !user !<'a'> !<'beer'> !<'for'> #'.*'
+    users = user (<whitespace> user)*
+    <user> = <'<@'> id <'>'>
+    <id> = #'[A-Z0-9]+'
+    <whitespace> = #'\s+'
